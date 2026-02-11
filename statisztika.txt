@@ -1,0 +1,6 @@
+A beolvasott fájlban összesen 30 játékos szerepel.
+A legkevesebb gólt szerző játékos: Arthur Friedenreich
+A legtöbb gólt szerző játékos: Cristiano Ronaldo
+A legtöbb mérkőzést játszó játékos: Franz Binder
+Az átlagos gólszám: 727.10
+***A legtöbb gólt szerző csapat: Barcelona

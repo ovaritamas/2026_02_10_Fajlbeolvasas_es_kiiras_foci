@@ -21,3 +21,17 @@ print("A legtöbb gólt szerző játékos: ____")
 print("A legtöbb mérkőzést játszó játékos: ____")
 print("Az átlagos gólszám: ____")
 print("***A legtöbb gólt szerző csapat: ____")
+
+forras = "beolvasando_adatok/labdarugok.txt"
+cel = "statisztika.txt"
+
+nevek = []
+csapatok = []
+meccsek = []
+golok = []
+
+f = open(forras, "r", encoding="utf-8")
+
+f.readline() 
+
+
