@@ -44,4 +44,42 @@ for sor in f:
         golok.append(int(adat[3]))
 f.close()
 
+letszam = len(nevek)
+atlag_gol = sum(golok) / letszam
 
+idx_min_gol = golok.index(min(golok))
+idx_max_gol = golok.index(max(golok))
+idx_max_meccs = meccsek.index(max(meccsek))
+
+egyedi_csapatok = []
+for cs in csapatok:
+    if cs not in egyedi_csapatok:
+        egyedi_csapatok.append(cs)
+
+legjobb_csapat_nev = ""
+legtobb_csapat_gol = -1
+
+for csapat in egyedi_csapatok:
+    csapat_osszes_gol = 0
+    for i in range(letszam):
+        if csapatok[i] == csapat:
+            csapat_osszes_gol += golok[i]
+    
+    if csapat_osszes_gol > legtobb_csapat_gol:
+        legtobb_csapat_gol = csapat_osszes_gol
+        legjobb_csapat_nev = csapat
+
+eredmeny_szoveg = f"""A beolvasott fájlban összesen {letszam} játékos szerepel.
+A legkevesebb gólt szerző játékos: {nevek[idx_min_gol]}
+A legtöbb gólt szerző játékos: {nevek[idx_max_gol]}
+A legtöbb mérkőzést játszó játékos: {nevek[idx_max_meccs]}
+Az átlagos gólszám: {atlag_gol:.2f}
+***A legtöbb gólt szerző csapat: {legjobb_csapat_nev}"""
+
+print(eredmeny_szoveg)
+
+f_ki = open(cel, "w", encoding="utf-8")
+f_ki.write(eredmeny_szoveg)
+f_ki.close()
+
+print("\nA statisztika.txt fájl sikeresen létrejött!")
