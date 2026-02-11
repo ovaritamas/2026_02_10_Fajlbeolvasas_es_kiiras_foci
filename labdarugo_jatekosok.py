@@ -34,4 +34,14 @@ f = open(forras, "r", encoding="utf-8")
 
 f.readline() 
 
+for sor in f:
+    sor = sor.strip()
+    if sor:
+        adat = sor.split(";")
+        nevek.append(adat[0])
+        csapatok.append(adat[1])
+        meccsek.append(int(adat[2]))
+        golok.append(int(adat[3]))
+f.close()
+
 
